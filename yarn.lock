@@ -1983,10 +1983,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pmt/chat@^1.17.2":
-  version "1.17.2"
-  resolved "https://gitlab.postmodern.ru/api/v4/projects/50/packages/npm/@pmt/chat/-/@pmt/chat-1.17.2.tgz#f4d1ec462da24bd53693b5d1bdb4836b1f721760"
-  integrity sha1-9NHsRi2iS9U2k7XRvbSDax9yF2A=
+"@pmt/chat@^1.17.4":
+  version "1.17.4"
+  resolved "https://gitlab.postmodern.ru/api/v4/projects/50/packages/npm/@pmt/chat/-/@pmt/chat-1.17.4.tgz#f83e2c718a85de20391b46e1585bdfd40c897904"
+  integrity sha1-+D4scYqF3iA5G0bhWFvf1AyJeQQ=
   dependencies:
     axios "^0.27.2"
     classnames "^2.3.2"
