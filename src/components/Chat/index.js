@@ -1,23 +1,15 @@
 import React from 'react';
-
-import {
-  SocketProvider,
-  RestProvider,
-  ChatProvider,
-  ChatPage as ChatViewport,
-} from '@pmt/chat';
+import { ChatIndex } from '@pmt/chat';
 import { makeStyles } from '@mui/styles';
-import { AppLanguageProvider } from '../../context/LanguageContext';
-
 const useStyles = makeStyles((theme) => {
   return {
     container: {
-      height: `calc(100vh - ${theme.spacing(25)})`,
+      marginTop: 12,
+      height: `calc(100vh - ${theme.spacing(2)})`,
       overflow: 'hidden',
     },
   };
 });
-
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 const Chat = ({ lang, activeGroupId, activeChatUserId }) => {
   const classes = useStyles();
@@ -26,20 +18,16 @@ const Chat = ({ lang, activeGroupId, activeChatUserId }) => {
   const chatBaseURLApi = 'https://chat.mobimed.ru/';
 
   return (
-    <AppLanguageProvider>
-      <div className={classes.container}>
-        <ChatProvider defLang={lang} tokenKey="authToken">
-          <RestProvider baseURLApi={chatBaseURLApi} pageSize={25}>
-            <SocketProvider wsUrl={chatWsUrl} wsPath={chatWsPath}>
-              <ChatViewport
-                activeGroupId={activeGroupId}
-                activeChatUserId={activeChatUserId}
-              />
-            </SocketProvider>
-          </RestProvider>
-        </ChatProvider>
-      </div>
-    </AppLanguageProvider>
+    <div className={classes.container}>
+      <ChatIndex
+        lang={lang}
+        chatBaseURLApi={chatBaseURLApi}
+        chatWsUrl={chatWsUrl}
+        chatWsPath={chatWsPath}
+        activeGroupId={activeGroupId}
+        activeChatUserId={activeChatUserId}
+      />
+    </div>
   );
 };
 
